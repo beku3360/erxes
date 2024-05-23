@@ -49,7 +49,7 @@ const pipelineTemplateQueries = {
     _args,
     { models: { PipelineTemplates } }: IContext
   ) {
-    return PipelineTemplates.find().count();
+    return PipelineTemplates.find().countDocuments();
   }
 };
 

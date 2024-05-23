@@ -77,7 +77,7 @@ const growthHackQueries = {
       args
     );
 
-    return models.GrowthHacks.find(filter).count();
+    return models.GrowthHacks.find(filter).countDocuments();
   },
 
   async growthHacksPriorityMatrix(

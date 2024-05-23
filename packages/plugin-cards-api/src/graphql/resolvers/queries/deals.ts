@@ -126,7 +126,7 @@ const dealQueries = {
       args
     );
 
-    return models.Deals.find(filter).count();
+    return models.Deals.find(filter).countDocuments();
   },
 
   /**
