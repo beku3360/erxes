@@ -66,6 +66,6 @@ export default {
     return await models.Users.find({
       branchIds: { $in: [branch._id, ...allChildrenIds] },
       isActive: true
-    }).count();
+    }).countDocuments();
   }
 };

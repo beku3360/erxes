@@ -357,7 +357,7 @@ const userQueries = {
         ? { [sortField]: sortDirection }
         : { username: 1 };
 
-    return paginate(models.Users.find(selector).sort(sort), args);
+    return paginate(models.Users.find(selector).sort(sort as any), args);
   },
 
   /**
