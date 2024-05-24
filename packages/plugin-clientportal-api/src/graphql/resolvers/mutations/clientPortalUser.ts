@@ -454,7 +454,7 @@ const clientPortalUserMutations = {
   /*
    * Change user password
    */
-  clientPortalUserChangePassword(
+  async clientPortalUserChangePassword(
     _root,
     args: { currentPassword: string; newPassword: string },
     { cpUser, models }: IContext
@@ -468,7 +468,7 @@ const clientPortalUserMutations = {
   /*
    * Change user password
    */
-  clientPortalResetPasswordWithCode(
+  async clientPortalResetPasswordWithCode(
     _root,
     args: {
       phone: string;
@@ -481,7 +481,7 @@ const clientPortalUserMutations = {
     return models.ClientPortalUsers.changePasswordWithCode(args);
   },
 
-  clientPortalResetPassword(
+  async clientPortalResetPassword(
     _root,
     args: { token: string; newPassword: string },
     { models }: IContext
