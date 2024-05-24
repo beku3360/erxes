@@ -9,7 +9,7 @@ const discussionQueries = {
 
     if (limit) {
       return models.Discussions.find(selector)
-        .sort(sort)
+        .sort(sort as any)
         .limit(limit);
     }
 

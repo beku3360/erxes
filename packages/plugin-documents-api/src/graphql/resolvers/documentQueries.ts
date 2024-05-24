@@ -39,7 +39,7 @@ const generateFilter = (args: IListParams) => {
 
 const documentQueries = {
   documents(_root, args: IListParams, { models }: IContext) {
-    const sort = { date: -1 };
+    const sort: any = { date: -1 };
 
     const selector = generateFilter(args);
 
