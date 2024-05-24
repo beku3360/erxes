@@ -363,7 +363,7 @@ const userQueries = {
   /**
    * All users
    */
-  allUsers(
+  async allUsers(
     _root,
     {
       isActive,
@@ -392,7 +392,7 @@ const userQueries = {
   /**
    * Get one user
    */
-  userDetail(_root, { _id }: { _id: string }, { models }: IContext) {
+  async userDetail(_root, { _id }: { _id: string }, { models }: IContext) {
     return models.Users.findOne({ _id });
   },
 

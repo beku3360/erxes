@@ -23,7 +23,7 @@ export default {
     return user;
   },
 
-  status(user: IUserDocument) {
+  async status(user: IUserDocument) {
     if (user.registrationToken) {
       return 'Not verified';
     }
