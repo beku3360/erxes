@@ -44,7 +44,7 @@ const pipelineTemplateQueries = {
   /**
    *  Pipeline template total count
    */
-  pipelineTemplatesTotalCount(
+  async pipelineTemplatesTotalCount(
     _root,
     _args,
     { models: { PipelineTemplates } }: IContext

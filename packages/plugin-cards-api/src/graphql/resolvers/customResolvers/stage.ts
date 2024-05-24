@@ -65,7 +65,7 @@ const getAmountsMap = async (
 };
 
 export default {
-  __resolveReference({ _id }, { models }: IContext) {
+  async __resolveReference({ _id }, { models }: IContext) {
     return models.Stages.findOne({ _id });
   },
 

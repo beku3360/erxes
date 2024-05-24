@@ -44,11 +44,11 @@ const ticketQueries = {
   /**
    * Archived list
    */
-  archivedTickets(_root, args: IArchiveArgs, { models }: IContext) {
+  async archivedTickets(_root, args: IArchiveArgs, { models }: IContext) {
     return archivedItems(models, args, models.Tickets);
   },
 
-  archivedTicketsCount(_root, args: IArchiveArgs, { models }: IContext) {
+  async archivedTicketsCount(_root, args: IArchiveArgs, { models }: IContext) {
     return archivedItemsCount(models, args, models.Tickets);
   },
 

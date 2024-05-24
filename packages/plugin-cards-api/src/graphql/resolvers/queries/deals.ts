@@ -132,11 +132,11 @@ const dealQueries = {
   /**
    * Archived list
    */
-  archivedDeals(_root, args: IArchiveArgs, { models }: IContext) {
+  async archivedDeals(_root, args: IArchiveArgs, { models }: IContext) {
     return archivedItems(models, args, models.Deals);
   },
 
-  archivedDealsCount(_root, args: IArchiveArgs, { models }: IContext) {
+  async archivedDealsCount(_root, args: IArchiveArgs, { models }: IContext) {
     return archivedItemsCount(models, args, models.Deals);
   },
 

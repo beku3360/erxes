@@ -47,11 +47,11 @@ const taskQueries = {
   /**
    * Archived list
    */
-  archivedTasks(_root, args: IArchiveArgs, { models }: IContext) {
+  async archivedTasks(_root, args: IArchiveArgs, { models }: IContext) {
     return archivedItems(models, args, models.Tasks);
   },
 
-  archivedTasksCount(_root, args: IArchiveArgs, { models }: IContext) {
+  async archivedTasksCount(_root, args: IArchiveArgs, { models }: IContext) {
     return archivedItemsCount(models, args, models.Tasks);
   },
 

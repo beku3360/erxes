@@ -393,7 +393,7 @@ const boardMutations = {
   /**
    * Update stage orders
    */
-  stagesUpdateOrder(
+  async stagesUpdateOrder(
     _root,
     { orders }: { orders: IOrderInput[] },
     { models }: IContext,
