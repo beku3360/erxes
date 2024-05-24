@@ -128,7 +128,7 @@ const formMutations = {
       }
     });
 
-    return models.FormSubmissions.remove({ customerId, contentTypeId });
+    return models.FormSubmissions.deleteOne({ customerId, contentTypeId });
   }
 };
 
