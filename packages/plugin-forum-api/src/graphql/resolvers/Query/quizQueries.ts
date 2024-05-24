@@ -6,16 +6,16 @@ import { moduleRequireLogin } from '@erxes/api-utils/src/permissions';
 import { Types, ObjectId, Schema } from 'mongoose';
 
 const quizQueries: IObjectTypeResolver<any, IContext> = {
-  forumQuizzes(_, { sort = {}, offset = 0, limit = 0 }, { models: { Quiz } }) {
+  async forumQuizzes(_, { sort = {}, offset = 0, limit = 0 }, { models: { Quiz } }) {
     return Quiz.find()
       .sort(sort)
       .skip(offset)
       .limit(limit);
   },
-  forumQuiz(_, { _id }, { models: { Quiz } }) {
+  async forumQuiz(_, { _id }, { models: { Quiz } }) {
     return Quiz.findByIdOrThrow(_id);
   },
-  forumQuizQuestion(_, { _id }, { models: { QuizQuestion } }) {
+  async forumQuizQuestion(_, { _id }, { models: { QuizQuestion } }) {
     return QuizQuestion.findByIdOrThrow(_id);
   }
 };
@@ -132,7 +132,7 @@ const cpQuizQueries: IObjectTypeResolver<any, IContext> = {
     return res;
   },
 
-  forumCpQuizzes(
+  async forumCpQuizzes(
     _,
     { offset = 0, limit = 0, sort = {}, ...params },
     { models: { Quiz } }
