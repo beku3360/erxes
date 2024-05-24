@@ -56,7 +56,7 @@ const tagQueries = {
       selector.name = new RegExp(`.*${searchValue}.*`, 'i');
     }
 
-    const tagsCount = await models.Tags.find(selector).count();
+    const tagsCount = await models.Tags.find(selector).countDocuments();
 
     return tagsCount;
   },
