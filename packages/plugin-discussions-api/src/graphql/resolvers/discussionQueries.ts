@@ -2,7 +2,7 @@ import { paginate } from '@erxes/api-utils/src';
 import { IContext } from '../../connectionResolver';
 
 const discussionQueries = {
-  discussions(_root, { limit }: { limit: number }, { models }: IContext) {
+  async discussions(_root, { limit }: { limit: number }, { models }: IContext) {
     const sort = { date: -1 };
 
     const selector: any = {};
@@ -16,7 +16,7 @@ const discussionQueries = {
     return paginate(models.Discussions.find(selector), {}).sort(sort);
   },
 
-  discussionsDetail(_root, { _id }, { models }: IContext) {
+  async discussionsDetail(_root, { _id }, { models }: IContext) {
     return models.Discussions.findOne({ _id });
   }
 };
