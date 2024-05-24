@@ -1,17 +1,25 @@
 import { nanoid } from 'nanoid';
 
-export const RandomStringId = {
+export const stringRandomId = {
   type: String,
   default: () => nanoid(),
 } as const;
 
-// Allows null | undefined. But if it's string it must contain atleast one non whitespace character
-export const StringNonEmpty = {
+/**
+ * Allows `null | undefined`.
+ * But if it's a `string`, it must contain atleast one non whitespace character.
+ */
+export const stringNonBlank = {
   type: String,
   validate: /\S+?/,
 } as const;
 
-export const StringRequiredNonEmpty = {
+export const stringRequired = {
+  type: String,
+  required: true,
+} as const;
+
+export const stringRequiredNonBlank = {
   type: String,
   validate: /\S+?/,
   required: true,
